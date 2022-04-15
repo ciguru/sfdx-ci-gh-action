@@ -1,0 +1,50 @@
+{
+  "name": "@ciguru/sfdx-ci-gh-action",
+  "version": "1.0.0",
+  "description": "GitHub action for SFDX CLI with CI Engine functionality to automate the Salesforce CRM development process",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "husky install",
+    "format": "prettier --write source",
+    "build": "ncc build source/index.ts -o dist",
+    "build:check": "tsc --noEmit",
+    "start": "env-cmd ts-node source/index.ts",
+    "lint": "eslint source",
+    "lint:fix": "eslint source --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ciguru/sfdx-ci-gh-action"
+  },
+  "author": "Customertimes Software",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/ciguru/sfdx-ci-gh-action/issues"
+  },
+  "homepage": "https://github.com/ciguru/sfdx-ci-gh-action#readme",
+  "devDependencies": {
+    "@types/jest": "27.4.1",
+    "@typescript-eslint/eslint-plugin": "5.19.0",
+    "@typescript-eslint/parser": "5.19.0",
+    "@vercel/ncc": "0.33.4",
+    "env-cmd": "10.1.0",
+    "eslint": "8.13.0",
+    "husky": "7.0.4",
+    "jest": "27.5.1",
+    "lint-staged": "12.3.7",
+    "prettier": "2.6.2",
+    "ts-jest": "27.1.4",
+    "ts-node": "10.7.0",
+    "typescript": "4.6.3"
+  },
+  "dependencies": {
+    "@actions/core": "1.6.0",
+    "@actions/github": "5.0.1",
+    "@ciguru/sfdx-ci-engine": "1.1.0"
+  }
+}
