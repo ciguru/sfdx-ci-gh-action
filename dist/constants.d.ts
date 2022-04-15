@@ -1,7 +1,7 @@
 interface Constants {
     input: {
         configurationFile: string;
-        inputs: string;
+        inputs: any;
     };
     dirname: string;
     repo: {
