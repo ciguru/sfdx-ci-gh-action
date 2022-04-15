@@ -1,0 +1,20 @@
+name: '@ciguru/sfdx-ci-gh-action'
+author: Customertimes Software
+description: GitHub action for SFDX CLI with CI Engine functionality to automate the Salesforce CRM development process
+inputs:
+  configurationFile:
+    description: Path to configuration file
+    required: true
+  inputs:
+    description: User inputs
+    required: false
+    default: ''
+outputs:
+  status:
+    description: Action exit status
+runs:
+  using: node16
+  main: dist/index.js
+branding:
+  icon: terminal
+  color: red
