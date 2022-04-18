@@ -1,7 +1,10 @@
+interface Inputs {
+    [k: string]: string | number | boolean | null;
+}
 interface Constants {
     input: {
         configurationFile: string;
-        inputs: any;
+        inputs: Inputs;
     };
     dirname: string;
     repo: {
