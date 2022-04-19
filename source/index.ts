@@ -93,4 +93,6 @@ function getInputs(config: SchemaV1): Inputs {
   return inputs;
 }
 
+Core.info(`__filename: ${__filename}`);
+
 run().then();
