@@ -6,7 +6,8 @@ RUN \
   addgroup -g 131337 app \
   && adduser -u 131337 -G app -s /bin/sh -h /app -D app \
   # Create directories for application
-  && mkdir -p /app
+  && mkdir -p /app \
+  && mkdir -p /github
 # Set the working directory
 WORKDIR /app
 # Copy project specification and dependencies lock files
@@ -47,7 +48,9 @@ COPY --from=builder /tmp/dist ./dist
 # Copy app sources
 COPY . .
 # Change permissions for files and directories
-RUN chown -R app:app /app && chmod g+s /app
+RUN \
+  chown -R app:app /app && chmod g+s /app \
+  && chown -R app:app /github && chmod g+s /github
 # Set NODE_ENV to 'development' if --build-arg DEBUG=1, or 'production'
 ENV NODE_ENV=${DEBUG:+development}
 ENV NODE_ENV=${NODE_ENV:-production}
