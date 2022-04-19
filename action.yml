@@ -20,9 +20,11 @@ runs:
   using: docker
   image: Dockerfile
   env:
-    INPUT_CONFIGURATIONFILE: $inputs.configurationFile
-    INPUT_INPUTS: $inputs.inputs
-  entrypoint: node /app/dist/index.js
+    INPUT_CONFIGURATIONFILE: $input.configurationFile
+    INPUT_INPUTS: $input.inputs
+  args:
+    - node
+    - /app/dist/index.js
 
 branding:
   icon: terminal
