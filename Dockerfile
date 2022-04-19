@@ -6,9 +6,9 @@ RUN \
   addgroup -g 131337 app \
   && adduser -u 131337 -G app -s /bin/sh -h /app -D app \
   # Create directories for application
-  && mkdir -p /app/src
+  && mkdir -p /app
 # Set the working directory
-WORKDIR /app/src
+WORKDIR /app
 # Copy project specification and dependencies lock files
 COPY package.json package-lock.json ./
 
