@@ -7,9 +7,10 @@
   "scripts": {
     "prepare": "husky install",
     "format": "prettier --write source",
-    "build": "ncc build source/index.ts -o dist",
+    "build": "tsc",
     "build:check": "tsc --noEmit",
     "start": "env-cmd ts-node source/index.ts",
+    "start2": "env-cmd ts-node dist/index.js",
     "lint": "eslint source",
     "lint:fix": "eslint source --fix",
     "test": "jest",
@@ -45,6 +46,7 @@
   "dependencies": {
     "@actions/core": "1.6.0",
     "@actions/github": "5.0.1",
-    "@ciguru/sfdx-ci-engine": "1.1.0"
+    "@ciguru/sfdx-ci-engine": "1.1.0",
+    "js-yaml": "4.1.0"
   }
 }

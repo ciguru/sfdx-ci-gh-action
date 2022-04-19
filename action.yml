@@ -12,9 +12,16 @@ inputs:
 outputs:
   status:
     description: Action exit status
+  result:
+    description: Action steps results
+  error:
+    description: Error message if any
 runs:
-  using: node16
-  main: dist/index.js
+  using: docker
+  image: Dockerfile
+  env:
+    INPUT_CONFIGURATIONFILE: $inputs.configurationFile
+    INPUT_INPUTS: $inputs.inputs
 branding:
   icon: terminal
   color: red

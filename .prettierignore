@@ -1,8 +1,10 @@
-.husky
-.idea
+.husky/
+.idea/
+.dockerignore
 .editorconfig
 .gitignore
 .prettierignore
-/dist
+Dockerfile
+dist/
 package-lock.json
 LICENSE
