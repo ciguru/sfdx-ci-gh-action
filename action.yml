@@ -22,7 +22,7 @@ runs:
   env:
     INPUT_CONFIGURATIONFILE: $inputs.configurationFile
     INPUT_INPUTS: $inputs.inputs
-  entrypoint: /app
+
 branding:
   icon: terminal
   color: red
