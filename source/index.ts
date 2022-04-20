@@ -6,32 +6,32 @@
  */
 
 import * as Core from '@actions/core';
-// import CiEngine from '@ciguru/sfdx-ci-engine';
+import CiEngine from '@ciguru/sfdx-ci-engine';
 import { JSONSchemaForCTSoftwareSFDXCIConfiguration as SchemaV1 } from '@ciguru/sfdx-ci-engine/dist/lib/schema-v1.0.0';
 import Constants from './constants';
 import { NoRequiredInput } from './errors';
 
-class CiEngine {
-  event: any;
-  constructor(str: string) {
-    console.log(str);
-  }
-  async loadSettings(): Promise<any> {
-    console.log('');
-  }
-  setGlobalInputs(inputs: Inputs) {
-    console.log(inputs);
-  }
-  run() {
-    console.log('');
-  }
-  getOutputs(): any {
-    console.log('');
-  }
-  getStep(str: string): { number: number; total: number; step: any } {
-    return { number: 1, total: 1, step: str };
-  }
-}
+// class CiEngine {
+//   event: any;
+//   constructor(str: string) {
+//     console.log(str);
+//   }
+//   async loadSettings(): Promise<any> {
+//     console.log('');
+//   }
+//   setGlobalInputs(inputs: Inputs) {
+//     console.log(inputs);
+//   }
+//   run() {
+//     console.log('');
+//   }
+//   getOutputs(): any {
+//     console.log('');
+//   }
+//   getStep(str: string): { number: number; total: number; step: any } {
+//     return { number: 1, total: 1, step: str };
+//   }
+// }
 
 interface Inputs {
   [k: string]: string | null;
