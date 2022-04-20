@@ -116,5 +116,6 @@ function getInputs(config: SchemaV1): Inputs {
 }
 
 Core.info(`__filename: ${__filename}`);
+Core.info(`cwd: ${process.cwd()}`);
 
 run().then();
